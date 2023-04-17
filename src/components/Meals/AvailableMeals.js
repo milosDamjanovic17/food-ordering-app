@@ -29,6 +29,7 @@ const DUMMY_MEALS = [
   },
 ];
 
+// map dummy collection and render it
 const AvailableMeals = () => {
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealItem
