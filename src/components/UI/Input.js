@@ -4,7 +4,7 @@ const Input = (props) => {
   return (
     <div className={styles.input}>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input />
+      <input id={props.input.id} {...props.input} />
     </div>
   );
 };
