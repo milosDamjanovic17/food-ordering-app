@@ -8,9 +8,10 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={styles.header}>
-        <h1>Tim Hortons Mobile Ordering App</h1>
+        <h1>Tim Hortons</h1>
         <HeaderCartButton />
       </header>
+      {/* background image */}
       <div className={styles["main-image"]}>
         <img src={foodImage} alt="A table full of Tim Hortons food" />
       </div>
