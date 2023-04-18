@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      {cartIsShown && <Cart onClose={hideCartHandler} />} {/* when user clicks on close or backdrop, hide Cart modal */}
       <Header onShowCart={showCartHandler} />
       <Meals />
     </CartProvider>
