@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartIcon from "../Cart/CartIcon";
+import CartContext from "../../store/cart-context";
 
 import styles from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
+  const cartCtx = useContext(CartContext);
+
+  const numberOfCartItems = cartCtx.items.reduce((currentNum, item) => {
+    return currentNum + item.amount;
+  }, 0);
+
   return (
     <button className={styles.button} onClick={props.onClick}>
       <span className={styles.icon}>
         <CartIcon /> {/* svgs can be used as React components */}
       </span>
       <span>Your Cart</span>
-      <span className={styles.badge}>4</span>
+      <span className={styles.badge}>{numberOfCartItems}</span>
     </button>
   );
 };
