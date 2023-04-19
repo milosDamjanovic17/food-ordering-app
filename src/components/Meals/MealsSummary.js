@@ -7,12 +7,10 @@ const MealsSummary = (props) => {
     <section className={styles.summary}>
       <h2>Delicious Food, Always fresh from Tims bakery!</h2>
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua.
+        Choose your favourite meal from our broad selection of available meals and enjoy a delicious lunch or dinner at home.
       </p>
 
-      <p>At vero eos et accusam et justo duo dolores et ea rebum.</p>
+      <p>All our meals are cooked with high-quality ingredients, just in-time and of course by experienced chiefs!</p>
     </section>
   );
 };

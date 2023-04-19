@@ -2,7 +2,13 @@ import React, { useReducer } from "react";
 
 import CartContext from "./cart-context";
 
-// defining default state for a Cart component
+// instead of hard writing type in a String, store them in object
+const ACTIONS = {
+  ADD: 'ADD',
+  REMOVE: 'REMOVE' 
+}
+
+// defining default state object for a Cart component
 const defaultCartState = {
   items: [],
   totalAmount: 0,
@@ -11,7 +17,7 @@ const defaultCartState = {
 // state refers to the current state, action represents a function to be performed on the state
 const cartReducer = (state, action) => {
   
-  if (action.type === "ADD") {
+  if (action.type === ACTIONS.ADD) {
     
     const updatedItems = state.items.concat(action.item);
 
@@ -35,11 +41,11 @@ const CartProvider = (props) => {
   );
 
   const addItemToCartHandler = (item) => {
-    dispatchCartAction({ type: "ADD", item: item });
+    dispatchCartAction({ type: ACTIONS.ADD, item: item });
   };
 
   const removeItemFromCartHandler = (id) => {
-    dispatchCartAction({ type: "REMOVE", id: id });
+    dispatchCartAction({ type: ACTIONS.REMOVE, id: id });
   };
 
 
