@@ -14,11 +14,15 @@ const Cart = (props) => {
 
   const hasItems = cartCtx.items.length > 0;
 
-  // remove item from cart list
-  const cartItemRemoveHandler = id => {};
+  // remove item from cart list, '-' button
+  const cartItemRemoveHandler = id => {
+    cartCtx.removeItem(id);
+  };
 
-  // increase quantity of an item inside cart list
-  const cartItemAddHandler = item => {};
+  // increase quantity of an item inside cart list, '+' button
+  const cartItemAddHandler = item => {
+    cartCtx.addItem({...item, amount: 1});
+  };
   
   
   // function for displaying each meal item we select from Meal list
