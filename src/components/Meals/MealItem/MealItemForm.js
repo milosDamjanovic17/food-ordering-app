@@ -5,6 +5,7 @@ import styles from "./MealItemForm.module.css";
 
 const MealItemForm = (props) => {
 
+  // listening to amount value on form, if user enteres value below 1 or greater than 5, prevent amount input submission
   const [amountIsValid, setAmountIsValid] = useState(true);
 
   const amountInputRef = useRef();
@@ -13,7 +14,7 @@ const MealItemForm = (props) => {
     event.preventDefault();
 
     const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumberConversion = +enteredAmount;
+    const enteredAmountNumberConversion = +enteredAmount; // convert value from string to Number/Integer
 
     if (
       enteredAmount.trim().length === 0 ||
@@ -21,6 +22,7 @@ const MealItemForm = (props) => {
       enteredAmountNumberConversion > 5
     ) {
       setAmountIsValid(false);
+      enteredAmount = 0;
       return;
     }
 
