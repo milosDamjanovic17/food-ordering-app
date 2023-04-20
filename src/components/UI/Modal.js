@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 
 import styles from "./Modal.module.css";
 
+
+// modal component, bind with React portal , index.html => <div id="overlays"></div>
+
 const Backdrop = (props) => {
   return <div className={styles.backdrop} onClick={props.onClose}></div>;
 };

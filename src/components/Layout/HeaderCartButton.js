@@ -10,8 +10,10 @@ const HeaderCartButton = (props) => {
   
   const cartCtx = useContext(CartContext);
 
+  // extract just items from cartCtx component
   const {items} = cartCtx;
   
+  // show only one digit 
   const numberOfCartItems = items.reduce((currentNum, item) => {
     return currentNum + item.amount;
   }, 0);

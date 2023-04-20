@@ -17,7 +17,7 @@ function App() {
 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose={hideCartHandler} />} {/* when user clicks on close or backdrop, hide Cart modal */}
+      {cartIsShown && <Cart onClose={hideCartHandler} />} {/* RENDER/SHOW CART MODAL ONLY WHEN USER CLICKS ON Your Cart button  */}
       <Header onShowCart={showCartHandler} />
       <Meals />
     </CartProvider>
